@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "mixinintrusiontest",
+	"version": "${version}",
+	"name": "MixinIntrusionTest",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mixinintrusiontest/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mixinintrusiontest.MixinIntrusionTest"
+		],
+		"client": [
+			"mixinintrusiontest.MixinIntrusionTestClient"
+		]
+	},
+	"mixins": [
+		"mixinintrusiontest.mixins.json",
+		{
+			"config": "mixinintrusiontest.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"languageAdapters": {
+		"mixinintrusiontest": "mixinintrusiontest.MixinTestLanguageAdapter"
+	}
+}
